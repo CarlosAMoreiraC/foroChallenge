@@ -15,8 +15,12 @@ public class TratadorDeErrores {
 
     @ExceptionHandler(EntityNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity tratarError404(){
-        return ResponseEntity.notFound().build();
+    public ResponseEntity tratarError404(Exception e){
+        return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, e.getMessage()));
+    }
+
+    private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {
+        return new ResponseEntity<>(apiError, apiError.getStatus());
     }
 
 
