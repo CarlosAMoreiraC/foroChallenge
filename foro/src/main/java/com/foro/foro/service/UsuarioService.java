@@ -14,7 +14,7 @@ public class UsuarioService {
 
 
   public UsuarioData findById(Long id) {
-    return repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Usuario no " +
+    return repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Autor no " +
         "encontrado"));
   }
 }
