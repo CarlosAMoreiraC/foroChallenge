@@ -16,6 +16,9 @@ public class CursoData {
   private String nombre;
   private String categoria;
 
+  public CursoData() {
+  }
+
   public CursoData(String nombre, String categoria) {
     this.nombre = nombre;
     this.categoria = categoria;

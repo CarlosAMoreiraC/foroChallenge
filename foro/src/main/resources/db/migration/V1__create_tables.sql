@@ -2,8 +2,8 @@
 create table usuario(
     id bigint not null auto_increment PRIMARY KEY,
     nombre varchar(100),
-    correoElectronico varchar(100),
-    contraseña varchar(100)
+    correo_electronico varchar(100),
+    contrasenia varchar(100)
 );
 
 create table perfil(

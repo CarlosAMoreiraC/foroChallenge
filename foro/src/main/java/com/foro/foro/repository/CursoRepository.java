@@ -1,4 +1,9 @@
 package com.foro.foro.repository;
 
-public interface CursoRepository {
+import com.foro.foro.domain.CursoData;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CursoRepository extends JpaRepository<CursoData, Long> {
 }

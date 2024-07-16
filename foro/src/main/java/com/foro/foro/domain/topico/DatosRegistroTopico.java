@@ -2,6 +2,7 @@ package com.foro.foro.domain.topico;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 public record DatosRegistroTopico(
 
@@ -14,10 +15,13 @@ public record DatosRegistroTopico(
   String mensaje,
 
   @NotNull
-  @NotBlank
+  @Positive
   Long autorId,
 
   @NotNull
-  @NotBlank
+  @Positive
   Long cursoId
-) {}
+) {
+  public static record Topico() {
+  }
+}

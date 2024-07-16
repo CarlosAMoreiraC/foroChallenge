@@ -19,6 +19,8 @@ public class UsuarioData {
   private String correoElectronico;
   private String contrasenia;
 
+  public UsuarioData() {
+  }
 
   public UsuarioData(String nombre, String correoElectronico, String contrasenia) {
     this.nombre = nombre;

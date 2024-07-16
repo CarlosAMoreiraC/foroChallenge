@@ -25,21 +25,33 @@ public class TopicoData {
   private LocalDateTime fechaCreacion;
   private String status;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "autor_id")
   private UsuarioData autor;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "curso_id")
   private CursoData curso;
 
-  public TopicoData(String titulo, String mensaje, LocalDateTime fechaCreacion, String status, UsuarioData autor, CursoData curso) {
+  public TopicoData() {
+  }
+
+  public TopicoData(String titulo, String mensaje, String status, UsuarioData autor, CursoData curso) {
     this.titulo = titulo;
     this.mensaje = mensaje;
-    this.fechaCreacion = fechaCreacion;
+    this.fechaCreacion = LocalDateTime.now();
     this.status = status;
     this.autor = autor;
     this.curso = curso;
+  }
+
+  public TopicoData(TopicoData topicoData) {
+    this.titulo = topicoData.getTitulo();
+    this.mensaje = topicoData.getMensaje();
+    this.fechaCreacion = topicoData.getFechaCreacion();
+    this.status = topicoData.getStatus();
+    this.autor = topicoData.getAutor();
+    this.curso = topicoData.getCurso();
   }
 
   public Long getId() {
